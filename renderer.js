@@ -4,3 +4,9 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+const {ipcRenderer, shell} = require('electron');
+
+
+ipcRenderer.on('upd-message', function (e, text) {
+    console.log('Message from updater: ', text);
+});
